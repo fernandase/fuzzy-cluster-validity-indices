@@ -13,7 +13,7 @@ FUZZY.SIL = function (X, U, distance = "euclidean", alpha = 1)
     n = nrow(U)
     k = ncol(U)
 
-    D = as.matrix(dist(X, method = distance))^2 #distance between object i and all other objects
+    D = as.matrix(dist(X, method = distance))^2 #distance between objects
 
     clusters.obj = apply(U, 1, which.max) # cth cluster where each object has its maximum membership degree (each object "belongs")
 
