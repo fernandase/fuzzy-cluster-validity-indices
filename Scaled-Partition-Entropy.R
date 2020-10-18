@@ -7,6 +7,6 @@
 
 PEB = function(U, base_log){
 
-  return(PE(U, base_log)/log(ncol(U), base_log))
+  return((-sum(U * log(U, base_log))/nrow(U))/log(ncol(U), base_log))
   
 }

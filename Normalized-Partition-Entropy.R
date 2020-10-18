@@ -7,6 +7,6 @@
 
 NPE = function(U, base_log) {
   
-  return(nrow(U) * PE(U, base_log)/(nrow(U)-ncol(U)))
+  return(nrow(U) * (-sum(U * log(U, base_log))/nrow(U))/(nrow(U)-ncol(U)))
 
 }
