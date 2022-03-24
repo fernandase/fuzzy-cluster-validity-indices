@@ -39,8 +39,8 @@ FUZZY.SIL = function (X, U, distance = "euclidean", alpha = 1)
         }   
 
         b[i] = min(B[-clusters.obj[i]])
-        m = which(clusters.obj == clusters.obj[i]) # # objects in the same cluster of i
-        a[i] = mean(D[i, m][-which(m == i)]) # average distance between object i and all other objects in different clusters (intra-cluster distance)
+        m = which(clusters.obj == clusters.obj[i]) # objects in the same cluster of i
+        a[i] = mean(D[i, m][-which(m == i)]) # average distance between object i and all other objects in the same cluster (intra-cluster distance)
         
         if (length(which(clusters.obj[i] == clusters.obj)) > 1){
             obj.sil[i] = (b[i] - a[i])/max(a[i], b[i])
